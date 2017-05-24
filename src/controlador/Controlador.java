@@ -30,17 +30,54 @@ public class Controlador implements ActionListener {
 	//respuesta a los eventos de la vista
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand().equals(">")){
-			contador1++;
+		
+		switch (e.getActionCommand()) {
+		case ("<"):
+			contador1--;
+			if (contador1 < 0)
+				contador1 = listaUsuarios.size()-1;
+			System.out.println(listaUsuarios.size() + " " + contador1);
 			mostraUsuario(contador1);
-		}
+			break;
+		case (">"):
+			contador1++;
+			if (contador1 == listaUsuarios.size())
+					contador1 = 0;
+			System.out.println(listaUsuarios.size() + " " + contador1);
+			mostraUsuario(contador1);
+			break;
+		case (">>"):	
+			contador1 += 25;
+			if (contador1 >= listaUsuarios.size())
+				contador1 = 0;
+			System.out.println(listaUsuarios.size() + " " + contador1);
+			mostraUsuario(contador1);	
+			break;
+		case ("<<"):
+			contador1 -= 25;
+			if (contador1 < 0)
+				contador1 = listaUsuarios.size()-1;
+			System.out.println(listaUsuarios.size() + " " + contador1);
+			mostraUsuario(contador1);
+			break;
 			
+		default:
+			break;
+		}
+		
+
+	
+				
 
 	}
 	
 	//registro los eventos de la vista
 	public void actionListener(ActionListener escuchador){
 		vista.getButtonAvance1().addActionListener(escuchador);
+		vista.getButtonRetroceso1().addActionListener(escuchador);
+		vista.getButtonAvance25().addActionListener(escuchador);
+		vista.getButtonRetroceso25().addActionListener(escuchador);
+		
 	}
 	
 	private void mostraUsuario(int indice){

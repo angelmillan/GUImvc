@@ -18,9 +18,14 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Component;
 
 public class Vista extends JFrame {
 
+	/**
+	 * 
+	 */
 	private JPanel contentPane;
 	private JTextField textFieldLogin;
 	private JTextField textFieldPassword;
@@ -133,9 +138,6 @@ public class Vista extends JFrame {
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(21)
-							.addComponent(lblPassword))
-						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(29)
 							.addComponent(lblLogin))
 						.addGroup(gl_contentPane.createSequentialGroup()
@@ -143,7 +145,10 @@ public class Vista extends JFrame {
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblGender)
 								.addComponent(lblCode)
-								.addComponent(buttonAvance1))))
+								.addComponent(buttonAvance1)))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(21)
+							.addComponent(lblPassword)))
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addPreferredGap(ComponentPlacement.RELATED)
@@ -159,7 +164,7 @@ public class Vista extends JFrame {
 							.addComponent(buttonRetroceso25)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
 							.addComponent(buttonRetroceso1)))
-					.addContainerGap(117, Short.MAX_VALUE))
+					.addContainerGap(90, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -168,17 +173,20 @@ public class Vista extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblLogin)
 						.addComponent(textFieldLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblPassword)
-						.addComponent(textFieldPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(textFieldPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(17)
+							.addComponent(lblPassword)))
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(22)
 							.addComponent(lblCode))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(18)
-							.addComponent(textFieldCode)))
+							.addComponent(textFieldCode, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 					.addGap(32)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addComponent(lblGender)
@@ -189,7 +197,7 @@ public class Vista extends JFrame {
 						.addComponent(buttonAvance25)
 						.addComponent(buttonRetroceso1)
 						.addComponent(buttonRetroceso25))
-					.addContainerGap(46, Short.MAX_VALUE))
+					.addContainerGap(28, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
